@@ -1,7 +1,7 @@
 declare module 'mti' {
   import { MongoClientOptions } from 'mongodb';
   // テストデータを入れるときのコレクション名、それから実体の定義
-  interface InjectableCollectionModule<T> {
+  interface InjectableCollection<T = object> {
     collectionName: string;
     documents: T[];
   }
@@ -17,7 +17,7 @@ declare module 'mti' {
   interface RunnerParams<O = object> {
     uri: string;
     dbName: string;
-    insertCollections: InjectableCollectionModule<O>[];
-    options?: MongoClientOptions;
+    insertCollections: InjectableCollection<O>[];
+    clientOptions?: MongoClientOptions;
   }
 }

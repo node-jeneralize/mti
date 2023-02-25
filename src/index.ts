@@ -1,11 +1,11 @@
 import { MongoClient } from 'mongodb';
-import { InjectableCollectionModule, CollectionIds, RunnerParams } from 'mti';
+import { InjectableCollection, CollectionIds, RunnerParams } from 'mti';
 import { parseValueToId } from '@/libs/parseValueToId';
 
 const run = async (
   client: MongoClient,
   dbName: string,
-  insertCollections: InjectableCollectionModule<object>[]
+  insertCollections: InjectableCollection[]
 ) => {
   const pushedCollectionIds: CollectionIds[] = [];
 
@@ -40,8 +40,8 @@ const run = async (
  * @param params.insertCollections 投入するデータ情報の Array
  * @param params.options クライアントとして渡す MongoClientOptions
  */
-export const postTestdata = (params: RunnerParams) => {
-  const client = new MongoClient(params.uri, params.options);
+export const mti = (params: RunnerParams): Promise<void> => {
+  const client = new MongoClient(params.uri, params.clientOptions);
 
   run(client, params.dbName, []).catch(() => console.dir);
 };
