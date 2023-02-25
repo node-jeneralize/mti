@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import { InjectableCollection, CollectionIds, RunnerParams } from 'mti';
 import { parseValueToId } from '@/libs/parseValueToId';
+import { logMessage } from '@/libs/logMessage';
 
 const run = async (
   client: MongoClient,
@@ -27,7 +28,7 @@ const run = async (
       ids: Object.values(insertedIds).map((id) => String(id)),
     });
 
-    console.log(`Created ${insertedCount} documents in ${collectionName}.`);
+    logMessage(`Created ${insertedCount} documents in ${collectionName}.`);
   }
   await client.close();
 };
