@@ -43,5 +43,7 @@ const run = async (
 export const mti = (params: RunnerParams): Promise<void> => {
   const client = new MongoClient(params.uri, params.clientOptions);
 
-  run(client, params.dbName, []).catch(() => console.dir);
+  return run(client, params.dbName, []).catch((...param) =>
+    console.dir(...param)
+  );
 };
