@@ -1,4 +1,5 @@
 declare module 'mti' {
+  import { MongoClientOptions } from 'mongodb';
   // テストデータを入れるときのコレクション名、それから実体の定義
   interface InjectableCollectionModule<T> {
     collectionName: string;
@@ -10,5 +11,13 @@ declare module 'mti' {
   interface CollectionIds {
     collectionName: string;
     ids: string[];
+  }
+
+  // Runner の引数オプション設定
+  interface RunnerParams<O = object> {
+    uri: string;
+    dbName: string;
+    insertCollections: InjectableCollectionModule<O>[];
+    options?: MongoClientOptions;
   }
 }

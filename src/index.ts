@@ -1,0 +1,47 @@
+import { MongoClient } from 'mongodb';
+import { InjectableCollectionModule, CollectionIds, RunnerParams } from 'mti';
+import { parseValueToId } from '@/libs/parseValueToId';
+
+const run = async (
+  client: MongoClient,
+  dbName: string,
+  insertCollections: InjectableCollectionModule<object>[]
+) => {
+  const pushedCollectionIds: CollectionIds[] = [];
+
+  for (let i = 0; i < insertCollections.length; i++) {
+    const { collectionName, documents } = insertCollections[i];
+
+    const database = client.db(dbName);
+
+    const parsedDocuments = documents.map((doc) =>
+      parseValueToId(doc, pushedCollectionIds)
+    );
+    const collection = database.collection(collectionName);
+    const { insertedCount, insertedIds } = await collection.insertMany(
+      parsedDocuments
+    );
+
+    pushedCollectionIds.push({
+      collectionName,
+      ids: Object.values(insertedIds).map((id) => String(id)),
+    });
+
+    console.log(`Created ${insertedCount} documents in ${collectionName}.`);
+  }
+  await client.close();
+};
+
+/**
+ * DB に対してデータを投入する
+ * @param params
+ * @param params.uri 投入先の mongodb のURI
+ * @param params.dbName 投入先の dbName
+ * @param params.insertCollections 投入するデータ情報の Array
+ * @param params.options クライアントとして渡す MongoClientOptions
+ */
+export const postTestdata = (params: RunnerParams) => {
+  const client = new MongoClient(params.uri, params.options);
+
+  run(client, params.dbName, []).catch(() => console.dir);
+};
