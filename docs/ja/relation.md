@@ -25,7 +25,7 @@ export interface Cat {
 ## 1. コレクション情報構築
 
 以下のコードに示すように、`Cat` の interface を `Omit<Cat, 'owner'>` で `owner` を消してから上書きしてやる。  
-そして `owner` に **`#{collectionName}-${collectionsNumber}`** の形式で文字列を渡すと投入済みのテストデータから id を検索して置き換える。
+そして `owner` に **`#${collectionName}-${collectionsNumber}`** の形式で文字列を渡すと投入済みのテストデータから id を検索して置き換える。
 上記の `collectionName` は `InjectableCollection.collectionName` で解決される。  
 また `collectionsNumber` は `InjectableCollection.documents` のインデックスで解決される
 

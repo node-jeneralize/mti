@@ -25,7 +25,7 @@ In this case, the relation resolution of `User.id` to be held in `Cat.owner` is 
 ## 1. collection data construction
 
 Overwrite the `Cat` with `Omit<Cat, 'owner'>` after erasing `owner` as shown in the following code.  
-Then, passing a string in the form **`#{collectionName}-${collectionsNumber}`** to the `owner` will retrieve the id from the submitted test data and replace it.  
+Then, passing a string in the form **`#${collectionName}-${collectionsNumber}`** to the `owner` will retrieve the id from the submitted test data and replace it.  
 The `collectionName` above is resolved with `InjectableCollection.collectionName`.  
 Also, `collectionsNumber` is resolved at the index of `InjectableCollection.documents`.
 
