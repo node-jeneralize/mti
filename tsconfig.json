@@ -7,10 +7,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "rootDir": "./",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     },
     "types": [
@@ -18,9 +18,6 @@
       "@types/node"
     ]
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
