@@ -1,0 +1,19 @@
+name: typeCheck
+on:
+  pull_request:
+    paths:
+      - src/**/*
+jobs:
+  typeCheck:
+    name: typeCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: using node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.13.0
+      - name: module install
+        run: yarn --frozen-lockfile
+      - name: run typeChecking
+        run: yarn typeCheck
