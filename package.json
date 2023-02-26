@@ -32,8 +32,10 @@
     "lint:code:fix": "prettier --write .",
     "lint": "npm run lint:js && npm run lint:code",
     "lint:fix": "npm run lint:js:fix && npm run lint:code:fix",
+    "build": "npm run build:types && npm run build:module",
     "build:types": "tsc -p tsconfig.types.json --emitDeclarationOnly",
-    "build:module": "esbuild --bundle --outdir=dist --platform=node src/index.ts"
+    "build:module": "esbuild --bundle --outdir=dist --platform=node src/index.ts",
+    "prepare": "npm run typeCheck && npm run build"
   },
   "dependencies": {
     "mongodb": "^5.1.0"
