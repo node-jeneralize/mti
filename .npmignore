@@ -5,7 +5,6 @@
 
 # source codes
 @types
-src
 tsconfig.json
 tsconfig.types.json
 
