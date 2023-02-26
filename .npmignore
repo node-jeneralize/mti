@@ -10,3 +10,9 @@ tsconfig.types.json
 
 # documents
 docs
+
+# for JetBrains IDE user
+.idea
+
+# for VisualStudio Code user
+.vscode
