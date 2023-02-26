@@ -6,6 +6,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
+    "esbuild": "^0.17.10",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "prettier": "^2.8.4",
@@ -18,7 +19,9 @@
     "lint:code": "prettier .",
     "lint:code:fix": "prettier --write .",
     "lint": "npm run lint:js && npm run lint:code",
-    "lint:fix": "npm run lint:js:fix && npm run lint:code:fix"
+    "lint:fix": "npm run lint:js:fix && npm run lint:code:fix",
+    "build:types": "tsc -p tsconfig.types.json --emitDeclarationOnly",
+    "build:module": "esbuild --bundle --outdir=dist --platform=node src/index.ts"
   },
   "dependencies": {
     "mongodb": "^5.1.0"
