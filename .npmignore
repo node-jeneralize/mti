@@ -1,0 +1,13 @@
+# CI
+.github
+.eslintrc.yaml
+.prettierrc
+
+# source codes
+@types
+src
+tsconfig.json
+tsconfig.types.json
+
+# documents
+docs
