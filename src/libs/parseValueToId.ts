@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { CollectionIds } from 'mti';
+import { CollectionIds } from '@mti/index';
 
 interface Ref {
   collectionName: string;
