@@ -5,8 +5,6 @@
 
 # source codes
 @types
-tsconfig.json
-tsconfig.types.json
 
 # documents
 docs
