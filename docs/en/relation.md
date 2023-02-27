@@ -30,7 +30,7 @@ The `collectionName` above is resolved with `InjectableCollection.collectionName
 Also, `collectionsNumber` is resolved at the index of `InjectableCollection.documents`.
 
 ```ts
-import { InjectableCollection } from 'mti';
+import { InjectableCollection } from '@node-jeneralize/mti';
 
 interface MockedCat extends Omit<Cat, 'owner'> {
   owner: string;

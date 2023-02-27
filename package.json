@@ -1,5 +1,5 @@
 {
-  "name": "mti",
+  "name": "@node-jeneralize/mti",
   "description": "Developing test data inserter for MongoDB",
   "version": "0.1.0",
   "license": "MIT",

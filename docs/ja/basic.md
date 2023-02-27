@@ -9,7 +9,7 @@ $ npm i -D mti
 ## 2. ドキュメントデータを作って投入する
 
 ```ts
-import { mti, InjectableCollectionModule } from 'mti';
+import { mti, InjectableCollectionModule } from '@node-jeneralize/mti';
 
 const users: User[] = [...new Array(10)].map((_, index) => {
   return {

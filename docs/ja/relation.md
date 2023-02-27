@@ -30,7 +30,7 @@ export interface Cat {
 また `collectionsNumber` は `InjectableCollection.documents` のインデックスで解決される
 
 ```ts
-import { InjectableCollection } from 'mti';
+import { InjectableCollection } from '@node-jeneralize/mti';
 
 interface MockedCat extends Omit<Cat, 'owner'> {
   owner: string;
