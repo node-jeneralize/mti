@@ -2,7 +2,7 @@
 mti 🌱
 </h1>
 
-<!-- ![NPM](https://img.shields.io/npm/l/mti?style=flat-square) -->
+![NPM](https://img.shields.io/npm/l/@node-jeneralize/mti?style=flat-square)
 
 > mti -> mongo testdata inserter
 
@@ -16,13 +16,13 @@ This package can insert prepared documents into any MongoDB instance.
 ## 1. install
 
 ```shell
-$ npm i -D mti
+$ npm i -D @node-jeneralize/mti
 ```
 
 ## 2. create document data, post
 
 ```ts
-import { mti, InjectableCollectionModule } from 'mti';
+import { mti, InjectableCollectionModule } from '@node-jeneralize/mti';
 
 const users: User[] = [...new Array(10)].map((_, index) => {
   return {
