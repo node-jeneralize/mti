@@ -1,9 +1,5 @@
 import { MongoClient } from 'mongodb';
-import {
-  InjectableCollection,
-  CollectionIds,
-  RunnerParams,
-} from '../@types/index';
+import { InjectableCollection, CollectionIds, RunnerParams } from '@/../@types';
 import { parseValueToId } from '@/libs/parseValueToId';
 import { logMessage } from '@/libs/logMessage';
 
