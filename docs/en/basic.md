@@ -3,7 +3,7 @@
 ## 1. install
 
 ```shell
-$ npm i -D mti
+$ npm i -D @node-jeneralize/mti
 ```
 
 ## 2. create document data, post

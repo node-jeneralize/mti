@@ -3,7 +3,7 @@
 ## 1. パッケージ導入
 
 ```shell
-$ npm i -D mti
+$ npm i -D @node-jeneralize/mti
 ```
 
 ## 2. ドキュメントデータを作って投入する
