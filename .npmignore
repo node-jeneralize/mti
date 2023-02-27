@@ -3,9 +3,6 @@
 .eslintrc.yaml
 .prettierrc
 
-# source codes
-@types
-
 # documents
 docs
 
