@@ -35,7 +35,7 @@
     "lint": "npm run lint:js && npm run lint:code",
     "lint:fix": "npm run lint:js:fix && npm run lint:code:fix",
     "build": "tsc && tsc-alias",
-    "prepare": "npm run typeCheck && npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "mongodb": "^5.1.0"
