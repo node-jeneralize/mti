@@ -3,7 +3,7 @@
     "module": "NodeNext",
     "target": "ES2018",
     "sourceMap": true,
-    "outDir": "dist/",
+    "outDir": "./dist",
     "declaration": true,
     "declarationMap": true,
     "strict": true,
