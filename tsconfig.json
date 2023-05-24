@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "NodeNext",
     "target": "ES2018",
     "sourceMap": true,
+    "outDir": "dist/",
+    "declaration": true,
+    "declarationMap": true,
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,8 +13,10 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
+      "@types": ["@types"]
     },
     "types": ["@types/node"]
   },
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
