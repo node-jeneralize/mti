@@ -14,8 +14,8 @@
     "name": "huequica",
     "url": "https://github.com/huequica"
   },
-  "main": "dist/index.js",
-  "types": "dist/types/src/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
@@ -23,6 +23,7 @@
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "prettier": "^2.8.4",
+    "tsc-alias": "^1.8.6",
     "typescript": "^4.9.5"
   },
   "scripts": {
@@ -33,10 +34,8 @@
     "lint:code:fix": "prettier --write .",
     "lint": "npm run lint:js && npm run lint:code",
     "lint:fix": "npm run lint:js:fix && npm run lint:code:fix",
-    "build": "rm -rf dist && npm run build:types && npm run build:module",
-    "build:types": "tsc -p tsconfig.types.json --emitDeclarationOnly",
-    "build:module": "esbuild --bundle --outdir=dist --platform=node src/index.ts",
-    "prepare": "npm run typeCheck && npm run build"
+    "build": "tsc && tsc-alias",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "mongodb": "^5.1.0"

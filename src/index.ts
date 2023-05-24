@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import { InjectableCollection, CollectionIds, RunnerParams } from '../@types';
+import { InjectableCollection, CollectionIds, RunnerParams } from '@types';
 import { parseValueToId } from '@/libs/parseValueToId';
 import { logMessage } from '@/libs/logMessage';
 
@@ -49,4 +49,4 @@ export const mti = (params: RunnerParams): Promise<void> => {
   );
 };
 
-export { InjectableCollection, RunnerParams } from '../@types';
+export { InjectableCollection, RunnerParams } from '@types';
